@@ -1,12 +1,10 @@
 //Voy a realizar una pagina de musica, en donde se puedan obtener suscripciones, haya un buscador de canciones y se puedan descargar las mismas de acuerdo a la suscripcion solicitada.
 
 
-//Defino varible nombre de usuario y tipo de suscripcion a través de prompt
+//Defino varible nombre de usuario y tipo de suscripcion a través de dos entradas
 
 let nombreUsuario = prompt ("Bienvenido a mi página de Música, ingrese un nombre de usuario "); 
 let tipoSubscripcion = prompt (nombreUsuario + ", que tipo de subscripción desea? \nPuede elegir: \n1) Free \n2) Basico \n3) Intermedio \n4) Premium").toLowerCase();
-
-
 
 
 while (tipoSubscripcion != ""){
@@ -41,42 +39,52 @@ console.log(tipoSubscripcion);
 let metodoPago;
 
 if(tipoSubscripcion == "basico" || tipoSubscripcion == "intermedio" || tipoSubscripcion == "premium"){
-    metodoPago = prompt("Elegi un metodo de pago, tene en cuenta que si elegis TARJETA DEBITO vas a tener un 10% de descuento sobre el precio final, y si elegis TARJETA CREDITO vas a tener un recargo del 10% sobre el precio final").toLowerCase();
+    metodoPago = prompt("Elegi un metodo de pago, tene en cuenta que si elegis DEBITO vas a tener un 10% de descuento sobre el precio final, y si elegis CREDITO vas a tener un recargo del 10% sobre el precio final").toUpperCase();
 }
 console.log(metodoPago);
 
-let precioSubscripcion;
+//Incorporo la funcion de descuento y recargo en una funcion llamada pago
 
-while(tipoSubscripcion != "free"){
-    if(tipoSubscripcion == "basico"){
-        precioSubscripcion = 100;
-    }else if(tipoSubscripcion == "intermedio"){
-        precioSubscripcion = 200;
-    }else {
-        precioSubscripcion = 300;
+function pago(metodoPago, monto){
+    let total = 0;
+    switch(metodoPago){
+        case "DEBITO":
+            total = monto * 0.9;
+            break;
+        
+        default:
+            total = monto * 1.1;
+            break;
     }
-    console.log(precioSubscripcion);
-    
-    const descuento = 0.9;
-    const recargo = 1.1;
-    let precioFinal;
-    
-    
-    
-    if(metodoPago == "tarjeta debito"){
-        precioFinal = precioSubscripcion * descuento;
-    }else if (metodoPago == "tarjeta credito"){
-        precioFinal = precioSubscripcion * recargo;
-    }else{
-        alert("Ese metodo de pago no existe");
-    }
-    
-    console.log(precioFinal);
-    alert("El precio final es " + precioFinal);
-    break;
+    return total.toFixed(2);
+}
+
+let precioSubscripcion;
+let pagoTotal;
+
+//Aplico la funcion pago de acuerdo al tipo de suscripcion seleccionado por el usuario
+
+if (tipoSubscripcion == "basico"){
+    precioSubscripcion = 1000;
+    alert(`El paquete basico cuesta $${precioSubscripcion}`);
+    pagoTotal = pago(metodoPago, precioSubscripcion);
+    alert(`El total a pagar es $${pagoTotal}`);
+}
+if (tipoSubscripcion == "intermedio"){
+    precioSubscripcion = 1000;
+    alert(`El paquete basico cuesta $${precioSubscripcion}`);
+    pagoTotal = pago(metodoPago, precioSubscripcion);
+    alert(`El total a pagar es $${pagoTotal}`);
+}
+if (tipoSubscripcion == "premium"){
+    precioSubscripcion = 1000;
+    alert(`El paquete basico cuesta $${precioSubscripcion}`);
+    pagoTotal = pago(metodoPago, precioSubscripcion);
+    alert(`El total a pagar es $${pagoTotal}`);
 }
 
 //Aqui agrego el ciclo for para contar las descargas
+
 let contadorDescarga = prompt("quieres realizar tus descargas?").toLowerCase();
 
 if( contadorDescarga == "si" && tipoSubscripcion == "free"){
@@ -98,10 +106,3 @@ if( contadorDescarga == "si" && tipoSubscripcion == "free"){
 }else{
     alert("Perfecto, cuando quieras puedes realizar las descargas correspondientes a tu subscripción");
 }
-
-
-
-
-
-
-
