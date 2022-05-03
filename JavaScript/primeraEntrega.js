@@ -3,8 +3,8 @@ let saludo = alert (`Bienvenido a mi página de múscia ${nombreUsuario}`);
 
 class Suscripcion{
 
-    constructor(paquete, precio, descargas, metodoPago, compra){
-        this.paquete = paquete;
+    constructor(paquetes, precio, descargas, metodoPago, compra){
+        this.paquetes = paquetes;
         this.precio = parseFloat(precio);
         this.descargas = descargas;
         this.metodoPago = metodoPago;
@@ -20,6 +20,8 @@ class Suscripcion{
     }
 }
 
+//Declaro un array paquetes para almacenar las suscripciones con el paquete, precio y cantidad de descargas
+
 const paquetes = [];
 
 paquetes.push(new Suscripcion ("basico", 1000, 10 ));
@@ -30,12 +32,12 @@ paquetes.push(new Suscripcion ("premium", 3000, 500 ));
 
 for (const producto of paquetes ){
     producto.tarjetaCredito();
-    console.log("El precio final de la Suscripcion " + producto.paquete + " con tarjeta de credito es " + producto.precio.toFixed(2));
+    console.log(`El precio final de la suscripción ${producto.paquetes} con tarjeta de crédito es ${producto.precio.toFixed(2)} y contiene ${producto.descargas} descargas`);
 }
 
 for (const producto of paquetes ){
     producto.tarjetaDebito();
-    console.log("El precio final de la Suscripcion " + producto.paquete + " con tarjeta de debito es " + producto.precio.toFixed(2));
+    console.log(`El precio final de la suscripción ${producto.paquetes} con tarjeta de débito es ${producto.precio.toFixed(2)} y contiene ${producto.descargas} descargas`);
 }
 
 //Incorporacion de un buscador de canciones
