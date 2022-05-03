@@ -68,3 +68,4 @@ buscador["artista"] = prompt("Que artista querés escuchar?");
 buscador["nombre"] = prompt("Ahora te toca seleccionar la canción que quieres escuchar");
 
 console.log(buscador.buscarCancion());
+alert(`Buscando canción ${buscador.nombre} del artista ${buscador.artista}`);
