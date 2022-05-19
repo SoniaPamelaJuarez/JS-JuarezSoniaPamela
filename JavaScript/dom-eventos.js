@@ -58,7 +58,7 @@ for(const cancion of canciones){
     //Agrego al contenedor musica cada uno de los article
     contenedorMusica.append(artCard);
 
-    //Evento onclick en boton descarga
+    //Evento onclick en boton descarga de cada tarjeta
     botonDescarga.onclick = () =>{
         const cancionDescargada = canciones.find(cancion => cancion.id === botonDescarga.id);
         carritoDescarga.push({titulo:cancionDescargada.titulo, artista:cancionDescargada.artista, album:cancionDescargada.album});
@@ -94,17 +94,20 @@ nombreUser.append("Nombre y Apellido");
 const emailUser = document.createElement ("h3");
 emailUser.append("E-mail")
 
-const input1 = document.createElement("input");
+let input1 = document.createElement("input");
+input1.className = "usuario";
 input1.placeholder = ("Escribe tu nombre");
 input1.required;
 input1.type = ("text");
 
-const input2 = document.createElement("input");
+let input2 = document.createElement("input");
+input2.className = "email";
 input2.placeholder = ("Escribe tu e-mail");
 input2.required;
 input2.type = ("email")
 
-const caja = document.createElement("textarea");
+let caja = document.createElement("textarea");
+caja.className = "caja";
 caja.placeholder = ("Escribe un Mensaje");
 caja.cols = ("10");
 caja.rows = ("4");
@@ -126,7 +129,13 @@ const validarFormulario = (e) => {
     console.log(formulario.children[1].value);
     console.log(formulario.children[3].value);
     console.log(formulario.children[4].value);
+
+    //Creo un objeto con los datos del usuario
+    let datos_formulario = {usuario_nombre:formulario.children[1].value, usuario_email:formulario.children[2].value, usuario_mensaje:formulario.children[3].value};
+    //Creo una localStorage con los datos del inicio de sesion en un array
+    localStorage.setItem("datos_formulario", JSON.stringify(datos_formulario));
 }
+
 
 form.addEventListener("submit", validarFormulario);
 
