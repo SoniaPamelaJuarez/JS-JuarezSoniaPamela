@@ -15,37 +15,73 @@ inicioSesion.innerHTML = `<div class="m-5 p-5 mb-5 d-flex flex-column align-item
 <input type="checkbox" class="form-check-input" id="exampleCheck1">
 <label class="form-check-label" for="exampleCheck1">Crear usuario</label>
 </div>
-<button type="button" class="btn btn-warning" id="boton_enviar">Enviar</button>
+<button type="button" class="btn btn-warning" id="boton_enviar">Crear Usuario</button>
+<button type="button" class="btn btn-warning m-3" id="boton_iniciar">Iniciar Sesión</button>
 </div>`;
 
 function validarInicio() {
     let email = document.getElementById("email1").value;
     let contrasena = document.getElementById("contrasena1").value;
-    let resultado_form = document.getElementById("resultado_form")
 
     if (email.length == 0) {
-        resultado_form.innerHTML = "<div class='p-3 mb-2 bg-danger text-white'>Ingrese un valor para el campo Email!</div>";
+        Swal.fire({
+            icon: "warning",
+            title: "Error!",
+            text: "Complete el campo E-mail",
+            confirmButtonText: "Aceptar",
+        });
         return false;
     } else if (email.indexOf("@") == -1) {
-        resultado_form.innerHTML = "<div class='p-3 mb-2 bg-danger text-white'>Ingrese correctamente el Email para el campo Email!</div>";
+        Swal.fire({
+            icon: "warning",
+            title: "Error!",
+            text: "El campo E-mail debe contener un @",
+            confirmButtonText: "Aceptar",
+        });
         return false;
-    } else {
-        resultado_form.innerHTML = "";
     }
 
     if ((contrasena.length != 8)) {
-        resultado_form.innerHTML = "<div class='p-3 mb-2 bg-danger text-white'>Ingrese una contraseña con 8 caracteres</div>";
+        Swal.fire({
+            icon: "warning",
+            title: "Error!",
+            text: "La contraseña debe contener 8 dígitos",
+            confirmButtonText: "Aceptar",
+        });
         return false;
-    } else {
-        resultado_form.innerHTML = "";
     }
     
     //Creo un objeto con los datos del usuario
     let datos_inicio = {usuario_email:email, usuario_contrasena:contrasena};
     //Creo una localStorage con los datos del inicio de sesion en un array
     localStorage.setItem("datos_inicio", JSON.stringify(datos_inicio));
-    //Redireccionar mi pagina a index.html
+
+    //Aplico un alert cuando se haga click en el boton con sweet alert en el inicio de sesion
+
+    const btn_alert = document.querySelector("#boton_enviar");
+    btn_alert.addEventListener("click", () => {
+    Swal.fire({
+        icon: "success",
+        title: "Cuenta creada de manera correcta",
+        showConfirmButton: false,
+        timer: 1000
+    })
+})
+
+//En el boton iniciar creo un evento click para redireccionar la pagina al home
+
+boton_enviar = document.getElementById("boton_iniciar");
+
+boton_enviar.addEventListener("click", ()=>{
     document.location = "home.html";
+})
 }
 
+
 document.getElementById("boton_enviar").addEventListener("click", validarInicio);
+
+
+
+
+
+
