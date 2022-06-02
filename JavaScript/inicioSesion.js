@@ -50,12 +50,6 @@ function validarInicio() {
         });
         return false;
     }
-    
-    //Creo un objeto con los datos del usuario
-    let datos_inicio = {usuario_email:email, usuario_contrasena:contrasena};
-    //Creo una localStorage con los datos del inicio de sesion en un array
-    localStorage.setItem("datos_inicio", JSON.stringify(datos_inicio));
-
     //Aplico un alert cuando se haga click en el boton con sweet alert en el inicio de sesion
 
     const btn_alert = document.querySelector("#boton_enviar");
@@ -67,15 +61,19 @@ function validarInicio() {
         timer: 1000
     })
 })
+    //Creo un objeto con los datos del usuario
+    let datos_inicio = {usuario_email:email, usuario_contrasena:contrasena};
+    //Creo una localStorage con los datos del inicio de sesion en un array
+    localStorage.setItem("datos_inicio", JSON.stringify(datos_inicio));
 
-//En el boton iniciar creo un evento click para redireccionar la pagina al home
+    //En el boton iniciar creo un evento click para redireccionar la pagina al home
 
-boton_enviar = document.getElementById("boton_iniciar");
+    boton_enviar = document.getElementById("boton_iniciar");
 
-boton_enviar.addEventListener("click", ()=>{
-    document.location = "home.html";
-})
-}
+    boton_enviar.addEventListener("click", ()=>{
+        document.location = "home.html";
+    })
+    }
 
 
 document.getElementById("boton_enviar").addEventListener("click", validarInicio);
