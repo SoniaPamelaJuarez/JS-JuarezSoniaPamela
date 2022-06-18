@@ -1,7 +1,6 @@
 html{
     box-sizing: border-box;
     font-family: sans-serif;
-    font-size: 16px;
 }
 
 *,
@@ -10,37 +9,37 @@ html{
     box-sizing: inherit;
 }
 
-a{
-    color: #FFFFFF;
-    transition: color 0.4s ease;
-    text-decoration: none;
+header{
     font-size: 20px;
+    z-index: 99;
 }
 
-a:hover{
-    color: #FFD166;
+.tamaño_logo{
+    width: 60%;
 }
 
-article h1{
-    color: #191528;
-    font-size: 20px;
+.card-img-top{
+    width: 50%;
 }
 
-article h2{
-    color: #3C162F;
-    font-size: 25px;
-}
-
-article h3{
-    color: #191528;
-    font-size: 20px;
+.card{
+    height: 480px;
+    background-color: #FFFFFF;
 }
 
 body{
     margin: 0;
     overflow-x: hidden;
-    background-color: #191528;
+    background-color: #FFD166;
 }
+
+
+
+
+
+
+
+
 
 .botonDescarga{
     color: #FFD166;
