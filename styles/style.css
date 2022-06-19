@@ -22,9 +22,15 @@ header{
     width: 50%;
 }
 
-.card{
+.card-c{
     height: 480px;
     background-color: #FFFFFF;
+}
+
+.card-p{
+    height: 60vh;
+    background-color: #191528;
+    color: #FFFFFF;
 }
 
 body{
@@ -33,6 +39,10 @@ body{
     background-color: #FFD166;
 }
 
+.bg-1{
+    background-color: #3C162F;
+    color: #FFFFFF;
+}
 
 
 

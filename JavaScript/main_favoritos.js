@@ -1,0 +1,2 @@
+actualizarBotonFavoritos();
+listaCancionesFav();

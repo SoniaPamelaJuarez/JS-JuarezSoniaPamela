@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link de BT de estilos-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!--Mis estilos-->
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
@@ -15,7 +14,7 @@
             <div class="col-md-4">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="index.html"><img src="imagenes/logo.png" alt="Queen" class="tamaño_logo"></a>
+                        <a class="navbar-brand" href="home.html"><img src="imagenes/logo.png" alt="Queen" class="tamaño_logo"></a>
                         <button class="navbar-toggler btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
@@ -33,16 +32,29 @@
                     <input type="search" id="texto_busqueda" class="form-control bg-ligth text-dark" placeholder="Ingrese canción...">
                     <button class="btn btn-warning m-2" type="button" id="buscar">Buscar</button>
             </div>  
+            <div class="col-md-4 d-flex align-items-center justify-content-end">
+                <a href="descargas.html" id="boton_descargas" title="Ver Descargas"></a>
+                <a href="favoritos.html" id="boton_favoritos" title="Ver Favoritos"></a>
+            </div>
         </div>
     </header>
-    <form id="inicioSesion"></form>
+    <main class="container mt-5">
+        <h1 class="text-center"><b>Lista de Favoritos</b></h1>
+        <div id="lista_canciones_fav" class="row">
+
+        </div>
+    </main>
+
+
+
+
 
 
     <!--Link de BT de JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!--Link sweet alert-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
     <!-- Link a JavaScript -->
-    <script src="JavaScript/inicioSesion.js"></script>
+    <script src="JavaScript/canciones.js" async></script>
+    <script src="JavaScript/favoritos.js" async></script>
+    <script src="JavaScript/main_favoritos.js" async></script>
 </body>
 </html>
