@@ -12,6 +12,7 @@ html{
 header{
     font-size: 20px;
     z-index: 99;
+    background-color: #3C162F;
 }
 
 .tamaño_logo{
@@ -44,133 +45,24 @@ body{
     color: #FFFFFF;
 }
 
-
-
-
-
-
-
-
-.botonDescarga{
+.precio{
     color: #FFD166;
-    background-color: #3C162F;
-    font-size: 20px;
-    border: 1px solid #FFD166;
-    transition: color 0.3s ease;
+    font-size: larger;
     font-weight: bold;
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 0.5rem;
 }
 
-.botonDescarga:hover{
-    font-size: 22px;
+.bg-confirmacion{
+    background-color: #191528;
 }
 
-#btnDescarga{
-    background-color: #FFD166;
-    color: #191528;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 0.5rem;
-    border: 2px solid #191528;
-    transition: color 0.3s ease;
+.confirmacion{
+    width: 20%;
 }
 
-#btnDescarga:hover{
-    background-color: #3C162F;
+.style-form{
     color: #FFD166;
-    font-size: 1.3rem;
-}
-
-#carritoDescarga  h4 {
-    color: #FFD166;
-}
-
-.enviar{
-    color: #3C162F;
-    font-weight: bolder;
 }
 
 .filter{
     display: none;
-}
-
-#footer{
-    background-color: #3C162F;
-    display: flex;
-    justify-content: center;
-
-}
-
-.form{
-    width: 30%;
-    color: #FFD166;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.form-search{
-    margin: auto;
-    text-align: center;
-}
-
-.form-search input{
-    display: block;
-    margin: auto;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-}
-
-.grid-fluid{
-    margin: 1rem auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-header{
-    padding: 0.5rem;
-    position: sticky;
-    top: 0;
-    text-align: center;
-    background-color: #3C162F;
-}
-
-header > *{
-    margin: 1rem auto;
-}
-
-header h1{
-    color: #FFD166;
-}
-
-img{
-    width: 100%;
-    height: auto;
-}
-
-input{
-    background-color: #FFD166;
-    margin: 0.5rem 0;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    margin: auto 10%;
-}
-
-.post-card{
-    margin: 1rem auto;
-    padding: 1rem;
-    width: 200px;
-    background-color: #FFD166;
-    text-align: center;
-}
-
-textarea{
-    background-color: #FFD166;
 }

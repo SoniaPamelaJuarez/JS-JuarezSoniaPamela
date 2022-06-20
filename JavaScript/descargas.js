@@ -1,9 +1,3 @@
-function buscarCancion(id){
-    let canciones = cargarCancionesLS();
-
-    return canciones.find(x => x.id == id);
-}
-
 function cargarCancionesDescargas(){
     if(localStorage.getItem("descargas")){
         return JSON.parse(localStorage.getItem("descargas"));
@@ -32,7 +26,7 @@ function eliminarDescarga(id){
     let cancion_descargas_actualizadas = cancion_descargas.filter(x => x.id != id);
     localStorage.setItem("descargas", JSON.stringify(cancion_descargas_actualizadas));
     actualizarBotonDescargas();
-    listaCancionesDescargadas()
+    listaCancionesDescargadas();
 }
 
 function listaCancionesDescargadas(){

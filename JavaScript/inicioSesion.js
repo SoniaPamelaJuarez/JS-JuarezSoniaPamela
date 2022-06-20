@@ -2,7 +2,7 @@
 
 let inicioSesion = document.getElementById("inicioSesion");
 inicioSesion.innerHTML = `<div class="m-5 p-5 mb-5 d-flex flex-column align-items-center bg-warning" style="--bs-bg-opacity: .5;">
-<p class="mb-3 w-50 text-center">CREA TU USUARIO</p>
+<p class="mb-3 w-50 text-center"><b>CREA TU USUARIO</b></p>
 <div class="mb-3 w-50 ">
 <label for="InputEmail1" class="form-label">Email</label>
 <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
@@ -15,8 +15,8 @@ inicioSesion.innerHTML = `<div class="m-5 p-5 mb-5 d-flex flex-column align-item
 <input type="checkbox" class="form-check-input" id="exampleCheck1">
 <label class="form-check-label" for="exampleCheck1">Crear usuario</label>
 </div>
-<button type="button" class="btn btn-warning" id="boton_enviar">Crear Usuario</button>
-<button type="button" class="btn btn-warning m-3" id="boton_iniciar">Iniciar Sesión</button>
+<button type="button" class="btn btn-warning bg-1" id="boton_enviar">Crear Usuario</button>
+<button type="button" class="btn btn-warning m-3 bg-1" id="boton_iniciar">Iniciar Sesión</button>
 </div>`;
 
 function validarInicio() {

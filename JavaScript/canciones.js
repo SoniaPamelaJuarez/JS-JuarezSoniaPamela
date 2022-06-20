@@ -15,17 +15,16 @@ const canciones = [
     { id: "11", titulo: "The Miracle", artista: "Queen", album: "The Miracle", duracion:"3:26", img: "themiracle.jpg" },
 ];
 
-//funcion para guardar el array producto en una local storage
+//funcion para guardar el array en una local storage
 
 function guardarCancionesLS(canciones){
     localStorage.setItem("canciones", JSON.stringify(canciones));
 }
 
-//funcion cargar productos desde la local storage, disimulo productos como si fuera una BD
+//funcion cargar canciones desde la local storage, disimulo canciones como si fuera una BD
 
 function cargarCancionesLS(){
     return JSON.parse(localStorage.getItem("canciones"));
 }
-
 
 
